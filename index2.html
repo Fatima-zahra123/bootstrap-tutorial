@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        background-color: red;
+        border: none;
+        color: white;
+        font-weight: bold;
+        padding: 6px;
+        border-radius: 4px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        cursor: pointer;
+      }
+
+      ul {
+        width: 50%;
+        background-color: bisque;
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        padding: 20px;
+        box-sizing: border-box;
+        margin: 20px auto;
+      }
+
+      ul li {
+        width: 60px;
+        height: 60px;
+        background-color: blue;
+        cursor: pointer;
+        border: 2px solid transparent;
+        opacity: 0.4;
+        transition: 0.3s;
+      }
+
+      ul li.active,
+      ul li:hover {
+        opacity: 1;
+      }
+
+      ul li:first-child {
+        background-color: red;
+      }
+
+      ul li:nth-child(2) {
+        background-color: green;
+      }
+      ul li:nth-child(3) {
+        background-color: blue;
+      }
+      ul li:nth-child(4) {
+        background-color: purple;
+      }
+
+      .experiment {
+        background-color: red;
+        width: 60%;
+        height: 300px;
+        margin: 20px auto;
+      }
+
+      /* Media Queries pour petits écrans */
+      @media (max-width: 768px) {
+        ul {
+          flex-direction: column; /* Les éléments se placent en colonne sur petits écrans */
+          align-items: center;
+        }
+
+        ul li {
+          width: 100%; /* Occupe toute la largeur disponible */
+          max-width: 100px; /* Taille maximale ajustée */
+          margin-bottom: 10px; /* Espacement entre les éléments */
+        }
+
+        .experiment {
+          width: 100%;
+          
+        }
+      }
+
+      /* Media Queries pour très petits écrans, comme les téléphones */
+      @media (max-width: 480px) {
+        ul {
+          padding: 10px;
+        }
+
+        ul li {
+          width: 80%;
+          max-width: none;
+        }
+
+        button {
+          bottom: 10px;
+          right: 10px;
+          padding: 4px; /* Taille plus petite du bouton */
+        }
+
+        .experiment {
+          width: 100%;
+          height: 200px; /* Ajuster la hauteur pour petits écrans */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button>UP</button>
+
+    <ul>
+      <li class="active" data-color="red"></li>
+      <li data-color="green"></li>
+      <li data-color="blue"></li>
+      <li data-color="purple"></li>
+    </ul>
+
+    <div class="experiment"></div>
+
+    <script src="main4.js"></script>
+  </body>
+</html>
